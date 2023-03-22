@@ -40,5 +40,22 @@ const handlePublicHome = (url, response) => {
     }
   });
 };
-module.exports = {handlePublic,handlePublicHome};
+
+const chunkHandler = (req,cb) => {
+    let allTheData = "";
+    req.on("data",(chunk) => {
+        allTheData += chunk;
+    })
+    req.on("end", cb(allTheData))
+}
+
+const filtered = (words,data) => {
+    const filterWord = words.filter((word) => {
+        let lowerCaseWord = word.toLowerCase();
+        let lowerCaseData = JSON.parse(data).toLowerCase();
+        return lowerCaseWord.startsWith(lowerCaseData);
+    })
+    return filterWord;
+}
+module.exports = {handlePublic,handlePublicHome,chunkHandler,filtered};
 
