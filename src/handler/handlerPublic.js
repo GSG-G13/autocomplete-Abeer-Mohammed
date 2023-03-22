@@ -34,8 +34,7 @@ const handlePublicHome = (url, response, cb) => {
       response.end('Server Error!')
     } else {
       response.writeHead(200, contentType[extension])
-      cb(file)
-      // response.end(file)
+      cb(file);
     }
   })
 }
