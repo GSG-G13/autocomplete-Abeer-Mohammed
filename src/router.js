@@ -33,8 +33,6 @@ const router = (req, res) => {
       res.end(JSON.stringify(filteredArr))
     })
   } else {
-    console.log(endpoint)
-    console.log('shams')
     res.writeHead(404, { 'content-type': 'text/plain' })
     res.end('404 server error')
   }

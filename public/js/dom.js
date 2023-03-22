@@ -24,8 +24,8 @@ wordInput.addEventListener('keyup', (e) => {
 
 const btnSearch = document.querySelector('#btn-search')
 btnSearch.addEventListener('click', (e) => {
-  console.log('are you')
   e.preventDefault();
+  
   get(
     `https://api.dictionaryapi.dev/api/v2/entries/en/${wordInput.value}`,
     (data) => {
@@ -40,6 +40,8 @@ function getData(data) {
   const closePopup = outerPopup.querySelector(".close-popup i");
   closePopup.addEventListener("click",() => {
     outerPopup.style.display = "none";
+    wordInput.value = "";
+    document.querySelector("ul").textContent = ""
   });
   const innerPopup = document.querySelector(".inner-popup h4");
   innerPopup.textContent = data;
