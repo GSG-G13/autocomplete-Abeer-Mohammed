@@ -8,8 +8,8 @@ const createElement = (tagName,className,parent) => {
 
 const renderWords = (words) => {
   const listData = document.querySelector("ul");
-  console.log(listData)
-    words.forEach(word => {
+  listData.textContent = "";
+    words?.forEach(word => {
         const list = createElement("li","list-word",listData);
         list.textContent =word;
     });
@@ -18,14 +18,13 @@ const renderWords = (words) => {
 
 const wordInput = document.querySelector("input");
 wordInput.addEventListener("keyup", (e) => {
+
     const value = e.target.value;
-   get('/api/word/filtered',(data) => {
-    console.log(data)
+   get(`/api/word/filtered?q=${value}`,(data) => {
     
-    document.querySelectorAll('li').forEach((item) => {
-      item.remove();
-    });
+    // document.querySelectorAll('li').forEach((item) => {
+    //   item.remove();
+    // });
     renderWords(data);
-    console.log(document.querySelectorAll('li'))
   });
 })
