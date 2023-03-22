@@ -6,12 +6,28 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(244, 134, 7);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(244, 134, 10);
 }
 
 nav {
-
-
   color: white;
   position: sticky;
   top: 0;
@@ -51,6 +67,7 @@ nav {
   border-left: none;
   background-color: #2f2f2f;
   color: white;
+  cursor: pointer;
 }
 
 #btn-search:hover {
@@ -66,6 +83,8 @@ ul{
     border-top: none;
     list-style-type: none;
     padding: 20px;
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 li{
@@ -80,6 +99,51 @@ li{
 .test{
     display: flex;
     justify-content: center;
+}
+
+.outer-popup {
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.inner-popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(244, 134, 7);
+  width: 50%;
+  height: 200px;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.inner-popup h4 {
+  line-height: 1.5;
+  color: #333;
+}
+
+.close-popup {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 30px;
+    height: 30px;
+    background-color:rgb(244, 134, 7);;
+    border-radius: 50%;
+}
+.close {
+  color: #fff;
+  cursor: pointer;
 }
 
 
