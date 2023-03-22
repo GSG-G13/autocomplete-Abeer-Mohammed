@@ -40,5 +40,5 @@ const handlePublicHome = (url, response) => {
     }
   });
 };
-module.exports = {handlePublic,handlePublicHome,chunkHandler,filtered};
+module.exports = {handlePublic,handlePublicHome};
 
