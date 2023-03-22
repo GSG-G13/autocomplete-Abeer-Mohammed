@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const values = require('./values.json');
-const {handlePublic,handlePublicHome,chunkHandler,filtered} = require("./handler/handlePublic");
+const {handlePublic,handlePublicHome} = require("./handler/handlerPublic");
 
 const router = (req, res) => {
   const endpoint = req.url;
