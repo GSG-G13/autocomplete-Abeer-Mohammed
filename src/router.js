@@ -12,7 +12,10 @@ const router = (req, res) => {
     handlePublic('index.html',res);
   } else if(endpoint === '/favicon.ico') {
      handlePublic(endpoint,res)
-  } else if (endpoint === '/style.css') {
+  }
+  else if(endpoint === '/logo.png') {
+     handlePublic(endpoint,res)
+  }  else if (endpoint === '/style.css') {
     handlePublic(endpoint,res)
   } else if (endpoint === '/js/xhr.js') {
     handlePublic(endpoint,res)
