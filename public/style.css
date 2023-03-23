@@ -94,7 +94,7 @@ li{
     margin: 15px 5px;
     padding: 10px;
     font-size: 18px;
-   
+    cursor: pointer;
 }
 .test{
     display: flex;
@@ -119,7 +119,7 @@ li{
   align-items: center;
   background-color: rgb(244, 134, 7);
   width: 50%;
-  height: 200px;
+  min-height: 200px;
   padding: 30px;
   border-radius: 20px;
 }
@@ -145,6 +145,7 @@ li{
   color: #fff;
   cursor: pointer;
 }
+
 
 
 @media screen and (max-width: 855px) {
